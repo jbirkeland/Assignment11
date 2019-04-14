@@ -1,6 +1,11 @@
 var myVue = new Vue({
     el: "#app",
     data: {
+        rankInput: "",
+        locationInput: "",
+        yearInput: "",
+        landmarkInput: "",
+        descriptionInput: "",
         postcards: [
             {
                 rank: 1,
@@ -48,6 +53,17 @@ var myVue = new Vue({
                     return false;
                 }
             })
+        },
+        addInformation: function() {
+            let newInformation = {
+                rank: this.rankInput,
+                location: this.locationInput,
+                year: this.yearInput,
+                landmark: this.landmarkInput,
+                description: this.descriptionInput
+            };
+            this.postcards.push(newInformation);
+            this.rankInput = this.locationInput = this.yearInput = this.landmarkInput = this.descriptionInput = "";
         }
     }
 });

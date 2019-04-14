@@ -2,8 +2,15 @@
     display: none;
 }
 
+html {
+    box-sizing: border-box;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
-    width: 1000px;
+    width: 700px;
     margin: auto;
 }
 
@@ -13,6 +20,10 @@ table, th, td {
     padding: 3px;
 }
 
+h1 {
+    text-align: center;
+}
+
 .favPostcard {
     background-color: rgb(127, 167, 199);
     color: white;
@@ -20,4 +31,16 @@ table, th, td {
 
 #note {
     font-style: italic;
+}
+
+form {
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+}
+
+.form-group input {
+    margin: .5em 1em;
 }

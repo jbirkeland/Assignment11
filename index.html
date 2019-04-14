@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Assignment 11: Show and Tell Collection</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        
+    </head>
+    <body>
+        <h1>A List of my Top 5 Postcards</h1>
+        
+        <div id="app" v-cloak>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Location</th>
+                        <th>Year</th>
+                        <th>Landmark</th>
+                        <th>Description</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                    v-for="information in postcards"
+                    v-bind:class="{favPostcard: information.year===1995}">
+                        <td>{{information.rank}}</td>
+                        <td>{{information.location}}</td>
+                        <td>{{information.year}}</td>
+                        <td>{{information.landmark}}</td>
+                        <td>{{information.description}}</td>
+                        <td><button type="button" v-on:click="removeInformation(information)">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="note">
+            <p>&#42;Note: Postcard in blue indicates my favorite one!</p>
+        </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
